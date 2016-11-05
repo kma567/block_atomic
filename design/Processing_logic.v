@@ -25,27 +25,33 @@
 `define  MR_NOP2	`MR_MRS0+`T_WIDTH // NOP after DLL Reset
 `define  MR_DONE	`MR_NOP2+`T_RLL // DONE
 
-`define  GNR_READ	`T_RCD+1
-`define  GNR_NOP	`GNR_READ+2
-`define  GNR_LSN	`GNR_NOP+`T_RL-2
+`define  GNR_ACT	0
+`define  GNR_NOP1	`GNR_ACT+2
+`define  GNR_READ	`GNR_NOP1+`T_RCD
+`define  GNR_NOP2	`GNR_READ+2
+`define  GNR_LSN	`GNR_NOP2+`T_RL-2
 `define  GNR_DATA	`GNR_LSN+1
-`define  GNR_DONE	`GNR_DATA+7+`T_RP
+`define  GNR_DONE	`GNR_DATA+6+`T_RP
 
-`define  GNW_WRITE	`T_RCD+1
-`define  GNW_NOP	`GNW_WRITE+2
-`define  GNW_DQS	`GNW_NOP+`T_WL-4
+`define  GNW_ACT	0
+`define  GNW_NOP1	`GNW_ACT+2
+`define  GNW_WRITE	`GNW_NOP1+`T_RCD
+`define  GNW_NOP2	`GNW_WRITE+2
+`define  GNW_DQS	`GNW_NOP2+`T_WL-4
 `define  GNW_GET	`GNW_DQS+1
 `define  GNW_DM		`GNW_GET+1
 `define  GNW_TSB	`GNW_DM+9
-`define  GNW_DONE	`GNW_TSB+21
+`define  GNW_DONE	`GNW_TSB+20
 
-`define  ATRW_READ	`T_RCD+1
-`define  ATRW_NOP1	`ATRW_READ+2
-`define  ATRW_WRITE  `ATRW_NOP1+`T_CCD+4-2
-`define  ATRW_NOP2  `ATRW_WRITE+2
-`define  ATRW_LSN	`ATRW_NOP1+`T_RL-2
+`define  ATRW_ACT	0
+`define  ATRW_NOP1	`ATRW_ACT+2
+`define  ATRW_READ	`ATRW_NOP1+`T_RCD
+`define  ATRW_NOP2	`ATRW_READ+2
+`define  ATRW_WRITE  `ATRW_NOP2+`T_CCD+4-2
+`define  ATRW_NOP3  `ATRW_WRITE+2
+`define  ATRW_LSN	`ATRW_NOP2+`T_RL-2
 `define  ATRW_DATA	`ATRW_LSN+1
-`define  ATRW_DQS	`ATRW_NOP2+`T_WL-4
+`define  ATRW_DQS	`ATRW_NOP3+`T_WL-4
 `define  ATRW_GET	`ATRW_DQS+1
 `define  ATRW_DM	`ATRW_GET+1
 `define  ATRW_TSB	`ATRW_DM+9
@@ -95,7 +101,7 @@ module Processing_logic(
 	output reg modify_setting;
 	
 	reg [2:0] read_pointer;
-	reg [3:0] state;
+	reg [2:0] state;
 	reg	[11:0] counter;
 	
 	reg [25:0] CMD_addr;
@@ -112,16 +118,14 @@ module Processing_logic(
 
 
 	
-	localparam	[3:0]
-		IDLE 		= 4'b0000,
-		MODIFY		= 4'b0001,
-		FETCH		= 4'b0010,
-		ACTIVATE	= 4'b0011,
-		DECODE	 	= 4'b0100,
-		REFRESH		= 4'b0101,
-		S_GNR 		= 4'b1000,
-		S_ATRW 		= 4'b1001,
-		S_GNW 		= 4'b1010;
+	localparam	[2:0]
+		IDLE 		= 3'b000,
+		MODIFY		= 3'b001,
+		DECODE		= 3'b011,
+		REFRESH	 	= 3'b100,
+		S_GNR 		= 3'b101,
+		S_ATRW 		= 3'b110,
+		S_GNW 		= 3'b111;
 
 		
 	localparam	[2:0]
@@ -162,6 +166,9 @@ always @(posedge clk)
 	end
 	else
 	  begin
+	  
+        RETURN_address <= CMD_addr;
+		ATOMIC_data <= ATOMIC_data_in;
 		
 		case (state)
 		
@@ -172,10 +179,12 @@ always @(posedge clk)
 				begin
 					if (!modify_setting)
 						state <= MODIFY;
-					if (!CMD_empty)
-					begin
+					if (!CMD_empty && !CMD_get)
 						CMD_get <= 1;
-						state <= FETCH;
+					if (CMD_get)
+					begin
+						CMD_get <= 0;
+						state <= DECODE;
 					end
 				end
 			end
@@ -191,7 +200,7 @@ always @(posedge clk)
 							 end
 							 
 					`M_NOP1: begin
-								{cs_bar,ras_bar,cas_bar,we_bar} <= NOP;
+								{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
 							 end
 							 
 					`M_MRS1: begin
@@ -226,8 +235,8 @@ always @(posedge clk)
 					`M_NOP3: {cs_bar, ras_bar, cas_bar, we_bar} <= NOP; // NOP command
 
 					`M_ZQCS: begin
-							{cs_bar, ras_bar, cas_bar, we_bar} <= ZQCS; 
-							A[10] <= 0; 
+								{cs_bar, ras_bar, cas_bar, we_bar} <= ZQCS; 
+								A[10] <= 0; 
 							end
 							
 					`M_NOP4: {cs_bar, ras_bar, cas_bar, we_bar} <= NOP; // NOP command	
@@ -264,39 +273,20 @@ always @(posedge clk)
 					`MR_NOP2: {cs_bar, ras_bar, cas_bar, we_bar} <= NOP; // NOP command
 					
 					`MR_DONE: begin
-						state <= IDLE; // done
-						modify_setting <= 1;
+							state <= IDLE; // done
+							modify_setting <= 1;
 						end
 					
 				endcase
 			end
 			
-			FETCH:
-			begin
-				CMD_get <= 0;
-				state <= ACTIVATE;
-			end
-			
-			ACTIVATE:
+			DECODE:
 			begin
 				CMD_addr <= CMD_data_out[30:5];
 				CMD_sz <= CMD_data_out[4:3];
 				CMD_op <= CMD_data_out[2:0];
-				if (ck)
-				begin
-					{cs_bar, ras_bar, cas_bar, we_bar} <= ACT;
-					A[12:0] <= CMD_data_out[27:15];
-					BA <= CMD_data_out[30:28];
-					state <= DECODE;
-				end				
-			end
-			
-			DECODE:
-			begin
-				counter <= counter + 1;
-				if (counter[0])
-				begin
-					{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
+				if (!ck)
+				begin					
 					case (CMD_data_out[33:31])
 					
 						SCR:
@@ -337,14 +327,25 @@ always @(posedge clk)
 						default: state <= IDLE;
 						
 					endcase
-				end
+				end				
 			end
 			
 			S_GNR:
 			begin
 				counter <= counter + 1;
-				RETURN_address <= CMD_addr;
 				case (counter)
+					
+					`GNR_ACT:
+					begin
+						{cs_bar, ras_bar, cas_bar, we_bar} <= ACT;
+						A[12:0] <= CMD_addr[22:10];
+						BA <= CMD_addr[25:23];
+					end
+					
+					`GNR_NOP1:
+					begin
+						{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
+					end
 					
 					`GNR_READ:
 					begin
@@ -353,7 +354,7 @@ always @(posedge clk)
 						A[9:0] <= CMD_addr[9:0];
 					end
 					
-					`GNR_NOP:
+					`GNR_NOP2:
 					begin
 						{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
 					end
@@ -394,17 +395,9 @@ always @(posedge clk)
 							state <= IDLE;
 						else
 						begin
-							{cs_bar, ras_bar, cas_bar, we_bar} <= ACT;
-							A[12:0] <= CMD_addr[22:10];
-							BA <= CMD_addr[25:23];
+							counter <= `GNR_ACT;
 							CMD_sz <= CMD_sz - 1;
 						end							
-					end					
-					
-					`GNR_DONE+2:
-					begin
-						{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
-						counter <= 0;
 					end
 					
 				endcase
@@ -415,15 +408,26 @@ always @(posedge clk)
 				counter <= counter + 1;
 				case (counter)
 				
+					`GNW_ACT:
+					begin
+						{cs_bar, ras_bar, cas_bar, we_bar} <= ACT;
+						A[12:0] <= CMD_addr[22:10];
+						BA <= CMD_addr[25:23];
+					end
+					
+					`GNW_NOP1:
+					begin
+						{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
+					end
+				
 					`GNW_WRITE:
 					begin
 						{cs_bar, ras_bar, cas_bar, we_bar} <= WRITE;
 						A[10] <= 1; // auto precharge
-						//A[9:0] <= CMD_addr[9:0];
 						A[9:0] <= CMD_addr[9:0];
 					end
 					
-					`GNW_NOP:
+					`GNW_NOP2:
 					begin
 						{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
 					end
@@ -486,18 +490,10 @@ always @(posedge clk)
 							state <= IDLE;
 						else
 						begin
-							{cs_bar, ras_bar, cas_bar, we_bar} <= ACT;
-							A[12:0] <= CMD_addr[22:10];
-							BA <= CMD_addr[25:23];
+							counter <= `GNW_ACT;
 							CMD_sz <= CMD_sz - 1;
 						end	
-					end
-					
-					`GNW_DONE+2:
-					begin
-						{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
-						counter <= 0;
-					end					
+					end				
 					
 				endcase
 			end
@@ -505,8 +501,19 @@ always @(posedge clk)
 			S_ATRW:
 			begin
 				counter <= counter + 1;
-				RETURN_address <= CMD_addr;
 				case (counter)
+				
+					`ATRW_ACT:
+					begin
+						{cs_bar, ras_bar, cas_bar, we_bar} <= ACT;
+						A[12:0] <= CMD_addr[22:10];
+						BA <= CMD_addr[25:23];
+					end
+					
+					`ATRW_NOP1:
+					begin
+						{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
+					end
 					
 					`ATRW_READ:
 					begin
@@ -515,7 +522,7 @@ always @(posedge clk)
 						A[9:0] <= CMD_addr[9:0];
 					end
 					
-					`ATRW_NOP1:
+					`ATRW_NOP2:
 					begin
 						{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
 					end
@@ -526,7 +533,7 @@ always @(posedge clk)
 						A[10] <= 1;
 					end
 					
-					`ATRW_NOP2:
+					`ATRW_NOP3:
 					begin
 						{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
 					end
@@ -565,7 +572,6 @@ always @(posedge clk)
 					
 					`ATRW_GET:
 					begin
-						ATOMIC_data <= ATOMIC_data_in;
 						DQS_out <= ~DQS_out;
 					end
 					
@@ -613,8 +619,7 @@ begin
 		3'b100: ATOMIC_data_in = RETURN_data ^ DATA_data_out;
 		3'b101: ATOMIC_data_in = {RETURN_data[7:0], RETURN_data[15:8]};
 		3'b110: ATOMIC_data_in = {1'b0,RETURN_data[15:1]};
-		3'b111:ATOMIC_data_in = {RETURN_data[14:0], 1'b0};
-		default: ATOMIC_data_in = RETURN_data;
+		3'b111: ATOMIC_data_in = {RETURN_data[14:0], 1'b0};
 	
 	endcase
 end
@@ -628,7 +633,7 @@ always @(negedge clk)
     if(DM_flag)
         DM <= 2'b00;
     else
-        DM <= 2'b11;	
+        DM <= 2'b11;
   end
  
 endmodule // ddr_controller

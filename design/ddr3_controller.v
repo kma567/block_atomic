@@ -103,7 +103,6 @@ module ddr3_controller(
 	wire 		IN_get, CMD_get, RETURN_put, RETURN_get;
 	reg 		IN_put, CMD_put;
 	
-	reg			IN_BLW_flag;
 	reg			IN_BLW_put;
 	reg	 [4:0]	IN_BLW_counter;
 	
@@ -238,11 +237,10 @@ module ddr3_controller(
 					
 					default:
 					begin
-						if (!IN_full)
-							IN_put = IN_BLW_put;
+						IN_put = IN_BLW_put & !IN_full;
 					end
 				
-			endcase
+			endcase	
 		end		
 	end
 	
@@ -251,17 +249,15 @@ module ddr3_controller(
 	begin
 		if (reset)
 		begin
-			IN_BLW_flag <= 0;
 			IN_BLW_counter <= 0;
 			IN_BLW_put <= 0;
 		end
 		else
 		begin
-			if (!IN_BLW_flag)
+			if (!IN_BLW_put)
 			begin
 				if (cmd == BLW && CMD_put)
 				begin
-					IN_BLW_flag <= 1;
 					IN_BLW_put <= 1;
 					IN_BLW_counter <= (sz + 1) * 8 - 2; //8 16 24 32
 				end
@@ -269,10 +265,7 @@ module ddr3_controller(
 			else
 			begin
 				if (IN_BLW_counter == 0)
-				begin
-					IN_BLW_flag <= 0;
 					IN_BLW_put <= 0;
-				end
 				else
 					if (!IN_full)
 						IN_BLW_counter <= IN_BLW_counter - 1;
