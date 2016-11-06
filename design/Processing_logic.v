@@ -9,6 +9,7 @@
 `define  T_MOD		30
 `define  T_RLL		1024
 `define  T_ZQCS   	128
+`define  T_RFC		88
 
 `define	 M_PRE		0	// PRE
 `define  M_NOP1 	`M_PRE+`T_WIDTH // NOP after PRE
@@ -24,6 +25,10 @@
 `define  MR_MRS0	`MR_NOP1+`T_MRD // Set MR0 with DLL Reset
 `define  MR_NOP2	`MR_MRS0+`T_WIDTH // NOP after DLL Reset
 `define  MR_DONE	`MR_NOP2+`T_RLL // DONE
+
+`define  REF_REF	0
+`define  REF_NOP	`REF_REF+2
+`define  REF_DONE	`REF_NOP+`T_RFC
 
 `define  GNR_ACT	0
 `define  GNR_NOP1	`GNR_ACT+2
@@ -103,6 +108,7 @@ module Processing_logic(
 	reg [2:0] read_pointer;
 	reg [2:0] state;
 	reg	[11:0] counter;
+	reg [12:0] refresh_counter;
 	
 	reg [25:0] CMD_addr;
 	reg [1:0] CMD_sz;
@@ -121,11 +127,12 @@ module Processing_logic(
 	localparam	[2:0]
 		IDLE 		= 3'b000,
 		MODIFY		= 3'b001,
-		DECODE		= 3'b011,
-		REFRESH	 	= 3'b100,
-		S_GNR 		= 3'b101,
-		S_ATRW 		= 3'b110,
-		S_GNW 		= 3'b111;
+		DECODE		= 3'b010,
+		REFRESH	 	= 3'b011,
+		S_GNR 		= 3'b100,
+		S_GNW 		= 3'b101,
+		S_ATRW 		= 3'b110;
+		
 
 		
 	localparam	[2:0]
@@ -143,7 +150,8 @@ module Processing_logic(
 		WRITE		= 4'b0100,
 		PRE			= 4'b0010,
 		MRS			= 4'b0000,
-		ZQCS		= 4'b0110;	
+		ZQCS		= 4'b0110,
+		REF			= 4'b0001;	
 		
 
 always @(posedge clk)
@@ -152,6 +160,7 @@ always @(posedge clk)
 		modify_setting <= 0;
 		
 	    counter <= 0;
+		refresh_counter <= 0;
 		state <= IDLE;
 		
 		CMD_get <= 0;
@@ -160,15 +169,20 @@ always @(posedge clk)
 		
 		ts_con <= 0;
 		DM_flag <= 0;
-		{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;		
-
-		listen <= 0;	
+		{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
+		listen <= 0;
+		
+		BLOCK_cmd <= 0;
+		ATOMIC_cmd <= 0;		
 	end
 	else
 	  begin
 	  
         RETURN_address <= CMD_addr;
 		ATOMIC_data <= ATOMIC_data_in;
+		
+		if (ready)
+			refresh_counter <= refresh_counter + 1;
 		
 		case (state)
 		
@@ -179,12 +193,21 @@ always @(posedge clk)
 				begin
 					if (!modify_setting)
 						state <= MODIFY;
-					if (!CMD_empty && !CMD_get)
-						CMD_get <= 1;
-					if (CMD_get)
+					if (refresh_counter[12])
 					begin
 						CMD_get <= 0;
-						state <= DECODE;
+						if (!ck)
+							state <= REFRESH;
+					end
+					else
+					begin
+						if (!CMD_empty && !CMD_get)
+							CMD_get <= 1;
+						if (CMD_get)
+						begin
+							CMD_get <= 0;
+							state <= DECODE;
+						end
 					end
 				end
 			end
@@ -276,6 +299,30 @@ always @(posedge clk)
 							state <= IDLE; // done
 							modify_setting <= 1;
 						end
+					
+				endcase
+			end
+			
+			REFRESH:
+			begin
+				counter <= counter + 1;
+				case (counter)
+				
+					`REF_REF:
+					begin
+						{cs_bar, ras_bar, cas_bar, we_bar} <= REF;
+					end
+					
+					`REF_NOP:
+					begin
+						{cs_bar, ras_bar, cas_bar, we_bar} <= NOP;
+					end
+					
+					`REF_DONE:
+					begin
+						state <= IDLE;
+						refresh_counter <= 0;
+					end
 					
 				endcase
 			end
@@ -608,7 +655,7 @@ always @(posedge clk)
 		
 	  end
 		
-always @(*)
+always @(CMD_op, RETURN_data, DATA_data_out)
 begin
 	case (CMD_op)
 	

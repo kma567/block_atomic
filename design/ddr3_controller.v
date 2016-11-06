@@ -103,6 +103,7 @@ module ddr3_controller(
 	wire 		IN_get, CMD_get, RETURN_put, RETURN_get;
 	reg 		IN_put, CMD_put;
 	
+	reg			IN_BLW_flag;
 	reg			IN_BLW_put;
 	reg	 [4:0]	IN_BLW_counter;
 	
@@ -210,38 +211,38 @@ module ddr3_controller(
 							.DQ_in				(dq_o[15:0])	);
 
 	// FIFO control logic
-	always @(reset, ready, cmd, CMD_full, IN_full, IN_BLW_put)
+	always @(cmd, CMD_full, IN_full, IN_BLW_put)
 	begin
 		CMD_put = 0;
 		IN_put = 0;
-		if (!reset && ready)
+		if (IN_BLW_put)
+			IN_put = ~IN_full;
+		else
 		begin
 			case (cmd)
-				
-					SCR, BLR:
-					begin
-						if (!CMD_full)
-						begin
-							CMD_put = 1;
-						end
-					end
 					
-					SCW, BLW, ATW, ATR:
+				SCR, BLR:
+				begin
+					if (!CMD_full)
 					begin
-						if (!CMD_full && !IN_full)
-						begin
-							CMD_put = 1;
-							IN_put = 1;
-						end
+						CMD_put = 1;
 					end
-					
-					default:
-					begin
-						IN_put = IN_BLW_put & !IN_full;
-					end
+				end
 				
+				SCW, BLW, ATW, ATR:
+				begin
+					if (!CMD_full && !IN_full)
+					begin
+						CMD_put = 1;
+						IN_put = 1;
+					end
+				end
+				
+				default:begin
+				end
+					
 			endcase	
-		end		
+		end
 	end
 	
 	// FIFO BLW logic
@@ -266,9 +267,8 @@ module ddr3_controller(
 			begin
 				if (IN_BLW_counter == 0)
 					IN_BLW_put <= 0;
-				else
-					if (!IN_full)
-						IN_BLW_counter <= IN_BLW_counter - 1;
+				else if (!IN_full)
+					IN_BLW_counter <= IN_BLW_counter - 1;
 			end
 		end
 	end
@@ -280,7 +280,7 @@ module ddr3_controller(
 		if (reset)
 			validout <= 0;
 		else
-			validout <= ~RETURN_empty;
+			validout <= RETURN_get & ~RETURN_empty;
 	end
 		
 		
@@ -351,3 +351,4 @@ module ddr3_controller(
 
 
 endmodule // ddr2_controller
+ 
