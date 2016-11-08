@@ -40,8 +40,8 @@
 TOP = tb
 
 # List of the design files
- DESIGN_FILES = ./design/*.v
-# DESIGN_FILES = ./netlist/*.v
+# DESIGN_FILES = ./design/*.v
+ DESIGN_FILES = ./netlist/*.v
 # DESIGN_FILES = ./src/*.v
 
 # List of the testbench files
