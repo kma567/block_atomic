@@ -51,7 +51,7 @@
 `include "/home/scf-22/ee577/NCSU45PDK/FreePDK45/osu_soc/lib/files/gscl45nm.v"
 
 module tb();
-`define IPNUT_FILE_NAME "ddr3_test_pattern7.dat" //Please MANUALLY modify the test pattern name
+`define IPNUT_FILE_NAME "ddr3_test_pattern2.dat" //Please MANUALLY modify the test pattern name
 `define TRACE_FILE_NAME "ddr3_test.trc"  //Not used 
 `define DUMP_FILE_NAME  "ddr3_out.dump" // Please MANUALLY modify the dump file name
 `define EOF 32'hFFFF_FFFF

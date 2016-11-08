@@ -180,7 +180,7 @@ always @(posedge clk)
         RETURN_address <= CMD_addr;
 		ATOMIC_data <= ATOMIC_data_in;
 		
-		if (ready)
+		if (ready && modify_setting)
 			refresh_counter <= refresh_counter + 1;
 		
 		case (state)
@@ -192,21 +192,20 @@ always @(posedge clk)
 				begin
 					if (!modify_setting)
 						state <= MODIFY;
-					if (refresh_counter[12])
+					if (CMD_get)
 					begin
 						CMD_get <= 0;
-						if (!ck)
-							state <= REFRESH;
+						state <= DECODE;
 					end
-					else
+					else 
 					begin
-						if (!CMD_empty && !CMD_get)
-							CMD_get <= 1;
-						if (CMD_get)
+						if (refresh_counter[12])
 						begin
-							CMD_get <= 0;
-							state <= DECODE;
+							if (!ck)
+								state <= REFRESH;
 						end
+						else if (!CMD_empty)
+							CMD_get <= 1;
 					end
 				end
 			end

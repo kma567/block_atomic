@@ -7,7 +7,7 @@ Report : timing
         -max_paths 20
 Design : ddr3_controller
 Version: F-2011.09-SP2
-Date   : Mon Nov  7 21:47:13 2016
+Date   : Mon Nov  7 22:47:53 2016
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -181,10 +181,10 @@ Wire Load Model Mode: top
   FIFO_CMD/U4157/Y (MUX2X1)                               0.08       1.33 r
   FIFO_CMD/U3779/Y (MUX2X1)                               0.03       1.36 f
   FIFO_CMD/U4163/Y (MUX2X1)                               0.07       1.43 r
-  FIFO_CMD/U3711/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U3709/Y (INVX1)                                0.03       1.45 f
   FIFO_CMD/U2380/Y (AOI22X1)                              0.03       1.49 r
   FIFO_CMD/U14/Y (BUFX2)                                  0.03       1.52 r
-  FIFO_CMD/U3710/Y (INVX1)                                0.01       1.54 f
+  FIFO_CMD/U3708/Y (INVX1)                                0.01       1.54 f
   FIFO_CMD/data_out_reg[3]/D (DFFPOSX1)                   0.00       1.54 f
   data arrival time                                                  1.54
 
@@ -218,10 +218,10 @@ Wire Load Model Mode: top
   FIFO_CMD/U4178/Y (MUX2X1)                               0.08       1.33 r
   FIFO_CMD/U3789/Y (MUX2X1)                               0.03       1.36 f
   FIFO_CMD/U4184/Y (MUX2X1)                               0.07       1.43 r
-  FIFO_CMD/U3713/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U3711/Y (INVX1)                                0.03       1.45 f
   FIFO_CMD/U2379/Y (AOI22X1)                              0.03       1.49 r
   FIFO_CMD/U15/Y (BUFX2)                                  0.03       1.52 r
-  FIFO_CMD/U3712/Y (INVX1)                                0.01       1.54 f
+  FIFO_CMD/U3710/Y (INVX1)                                0.01       1.54 f
   FIFO_CMD/data_out_reg[4]/D (DFFPOSX1)                   0.00       1.54 f
   data arrival time                                                  1.54
 
@@ -255,10 +255,10 @@ Wire Load Model Mode: top
   FIFO_CMD/U4136/Y (MUX2X1)                               0.08       1.33 r
   FIFO_CMD/U3769/Y (MUX2X1)                               0.03       1.36 f
   FIFO_CMD/U4142/Y (MUX2X1)                               0.07       1.43 r
-  FIFO_CMD/U3717/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U3715/Y (INVX1)                                0.03       1.45 f
   FIFO_CMD/U2381/Y (AOI22X1)                              0.03       1.49 r
   FIFO_CMD/U13/Y (BUFX2)                                  0.03       1.52 r
-  FIFO_CMD/U3716/Y (INVX1)                                0.01       1.54 f
+  FIFO_CMD/U3714/Y (INVX1)                                0.01       1.54 f
   FIFO_CMD/data_out_reg[2]/D (DFFPOSX1)                   0.00       1.54 f
   data arrival time                                                  1.54
 
@@ -324,37 +324,37 @@ Wire Load Model Mode: top
   clock network delay (ideal)                             0.00       0.00
   XPL/CMD_addr_reg[0]/CLK (DFFPOSX1)                      0.00 #     0.00 r
   XPL/CMD_addr_reg[0]/Q (DFFPOSX1)                        0.13       0.13 f
-  XPL/r473/A[0] (Processing_logic_DW01_inc_1)             0.00       0.13 f
-  XPL/r473/U1_1_1/YC (HAX1)                               0.06       0.19 f
-  XPL/r473/U1_1_2/YC (HAX1)                               0.05       0.24 f
-  XPL/r473/U1_1_3/YC (HAX1)                               0.05       0.29 f
-  XPL/r473/U1_1_4/YC (HAX1)                               0.05       0.34 f
-  XPL/r473/U1_1_5/YC (HAX1)                               0.05       0.39 f
-  XPL/r473/U1_1_6/YC (HAX1)                               0.05       0.45 f
-  XPL/r473/U1_1_7/YC (HAX1)                               0.05       0.50 f
-  XPL/r473/U1_1_8/YC (HAX1)                               0.05       0.55 f
-  XPL/r473/U1_1_9/YC (HAX1)                               0.05       0.60 f
-  XPL/r473/U1_1_10/YC (HAX1)                              0.05       0.65 f
-  XPL/r473/U1_1_11/YC (HAX1)                              0.05       0.70 f
-  XPL/r473/U1_1_12/YC (HAX1)                              0.05       0.75 f
-  XPL/r473/U1_1_13/YC (HAX1)                              0.05       0.80 f
-  XPL/r473/U1_1_14/YC (HAX1)                              0.05       0.86 f
-  XPL/r473/U1_1_15/YC (HAX1)                              0.05       0.91 f
-  XPL/r473/U1_1_16/YC (HAX1)                              0.05       0.96 f
-  XPL/r473/U1_1_17/YC (HAX1)                              0.05       1.01 f
-  XPL/r473/U1_1_18/YC (HAX1)                              0.05       1.06 f
-  XPL/r473/U1_1_19/YC (HAX1)                              0.05       1.11 f
-  XPL/r473/U1_1_20/YC (HAX1)                              0.05       1.16 f
-  XPL/r473/U1_1_21/YC (HAX1)                              0.05       1.21 f
-  XPL/r473/U1_1_22/YC (HAX1)                              0.05       1.26 f
-  XPL/r473/U1_1_23/YC (HAX1)                              0.05       1.32 f
-  XPL/r473/U1_1_24/YC (HAX1)                              0.05       1.37 f
-  XPL/r473/U2/Y (XOR2X1)                                  0.03       1.40 f
-  XPL/r473/SUM[25] (Processing_logic_DW01_inc_1)          0.00       1.40 f
-  XPL/U594/Y (AOI22X1)                                    0.05       1.45 r
-  XPL/U1167/Y (BUFX2)                                     0.04       1.49 r
+  XPL/r469/A[0] (Processing_logic_DW01_inc_1)             0.00       0.13 f
+  XPL/r469/U1_1_1/YC (HAX1)                               0.06       0.19 f
+  XPL/r469/U1_1_2/YC (HAX1)                               0.05       0.24 f
+  XPL/r469/U1_1_3/YC (HAX1)                               0.05       0.29 f
+  XPL/r469/U1_1_4/YC (HAX1)                               0.05       0.34 f
+  XPL/r469/U1_1_5/YC (HAX1)                               0.05       0.39 f
+  XPL/r469/U1_1_6/YC (HAX1)                               0.05       0.45 f
+  XPL/r469/U1_1_7/YC (HAX1)                               0.05       0.50 f
+  XPL/r469/U1_1_8/YC (HAX1)                               0.05       0.55 f
+  XPL/r469/U1_1_9/YC (HAX1)                               0.05       0.60 f
+  XPL/r469/U1_1_10/YC (HAX1)                              0.05       0.65 f
+  XPL/r469/U1_1_11/YC (HAX1)                              0.05       0.70 f
+  XPL/r469/U1_1_12/YC (HAX1)                              0.05       0.75 f
+  XPL/r469/U1_1_13/YC (HAX1)                              0.05       0.80 f
+  XPL/r469/U1_1_14/YC (HAX1)                              0.05       0.86 f
+  XPL/r469/U1_1_15/YC (HAX1)                              0.05       0.91 f
+  XPL/r469/U1_1_16/YC (HAX1)                              0.05       0.96 f
+  XPL/r469/U1_1_17/YC (HAX1)                              0.05       1.01 f
+  XPL/r469/U1_1_18/YC (HAX1)                              0.05       1.06 f
+  XPL/r469/U1_1_19/YC (HAX1)                              0.05       1.11 f
+  XPL/r469/U1_1_20/YC (HAX1)                              0.05       1.16 f
+  XPL/r469/U1_1_21/YC (HAX1)                              0.05       1.21 f
+  XPL/r469/U1_1_22/YC (HAX1)                              0.05       1.26 f
+  XPL/r469/U1_1_23/YC (HAX1)                              0.05       1.32 f
+  XPL/r469/U1_1_24/YC (HAX1)                              0.05       1.37 f
+  XPL/r469/U2/Y (XOR2X1)                                  0.03       1.40 f
+  XPL/r469/SUM[25] (Processing_logic_DW01_inc_1)          0.00       1.40 f
+  XPL/U593/Y (AOI22X1)                                    0.05       1.45 r
+  XPL/U1177/Y (BUFX2)                                     0.04       1.49 r
   XPL/U127/Y (AND2X1)                                     0.03       1.51 r
-  XPL/U1165/Y (INVX1)                                     0.02       1.53 f
+  XPL/U1175/Y (INVX1)                                     0.02       1.53 f
   XPL/CMD_addr_reg[25]/D (DFFPOSX1)                       0.00       1.53 f
   data arrival time                                                  1.53
 
@@ -383,37 +383,37 @@ Wire Load Model Mode: top
   clock network delay (ideal)                             0.00       0.00
   XPL/CMD_addr_reg[1]/CLK (DFFPOSX1)                      0.00 #     0.00 r
   XPL/CMD_addr_reg[1]/Q (DFFPOSX1)                        0.13       0.13 f
-  XPL/r473/A[1] (Processing_logic_DW01_inc_1)             0.00       0.13 f
-  XPL/r473/U1_1_1/YC (HAX1)                               0.06       0.19 f
-  XPL/r473/U1_1_2/YC (HAX1)                               0.05       0.24 f
-  XPL/r473/U1_1_3/YC (HAX1)                               0.05       0.29 f
-  XPL/r473/U1_1_4/YC (HAX1)                               0.05       0.34 f
-  XPL/r473/U1_1_5/YC (HAX1)                               0.05       0.39 f
-  XPL/r473/U1_1_6/YC (HAX1)                               0.05       0.45 f
-  XPL/r473/U1_1_7/YC (HAX1)                               0.05       0.50 f
-  XPL/r473/U1_1_8/YC (HAX1)                               0.05       0.55 f
-  XPL/r473/U1_1_9/YC (HAX1)                               0.05       0.60 f
-  XPL/r473/U1_1_10/YC (HAX1)                              0.05       0.65 f
-  XPL/r473/U1_1_11/YC (HAX1)                              0.05       0.70 f
-  XPL/r473/U1_1_12/YC (HAX1)                              0.05       0.75 f
-  XPL/r473/U1_1_13/YC (HAX1)                              0.05       0.80 f
-  XPL/r473/U1_1_14/YC (HAX1)                              0.05       0.86 f
-  XPL/r473/U1_1_15/YC (HAX1)                              0.05       0.91 f
-  XPL/r473/U1_1_16/YC (HAX1)                              0.05       0.96 f
-  XPL/r473/U1_1_17/YC (HAX1)                              0.05       1.01 f
-  XPL/r473/U1_1_18/YC (HAX1)                              0.05       1.06 f
-  XPL/r473/U1_1_19/YC (HAX1)                              0.05       1.11 f
-  XPL/r473/U1_1_20/YC (HAX1)                              0.05       1.16 f
-  XPL/r473/U1_1_21/YC (HAX1)                              0.05       1.21 f
-  XPL/r473/U1_1_22/YC (HAX1)                              0.05       1.26 f
-  XPL/r473/U1_1_23/YC (HAX1)                              0.05       1.32 f
-  XPL/r473/U1_1_24/YC (HAX1)                              0.05       1.37 f
-  XPL/r473/U2/Y (XOR2X1)                                  0.03       1.40 f
-  XPL/r473/SUM[25] (Processing_logic_DW01_inc_1)          0.00       1.40 f
-  XPL/U594/Y (AOI22X1)                                    0.05       1.45 r
-  XPL/U1167/Y (BUFX2)                                     0.04       1.49 r
+  XPL/r469/A[1] (Processing_logic_DW01_inc_1)             0.00       0.13 f
+  XPL/r469/U1_1_1/YC (HAX1)                               0.06       0.19 f
+  XPL/r469/U1_1_2/YC (HAX1)                               0.05       0.24 f
+  XPL/r469/U1_1_3/YC (HAX1)                               0.05       0.29 f
+  XPL/r469/U1_1_4/YC (HAX1)                               0.05       0.34 f
+  XPL/r469/U1_1_5/YC (HAX1)                               0.05       0.39 f
+  XPL/r469/U1_1_6/YC (HAX1)                               0.05       0.45 f
+  XPL/r469/U1_1_7/YC (HAX1)                               0.05       0.50 f
+  XPL/r469/U1_1_8/YC (HAX1)                               0.05       0.55 f
+  XPL/r469/U1_1_9/YC (HAX1)                               0.05       0.60 f
+  XPL/r469/U1_1_10/YC (HAX1)                              0.05       0.65 f
+  XPL/r469/U1_1_11/YC (HAX1)                              0.05       0.70 f
+  XPL/r469/U1_1_12/YC (HAX1)                              0.05       0.75 f
+  XPL/r469/U1_1_13/YC (HAX1)                              0.05       0.80 f
+  XPL/r469/U1_1_14/YC (HAX1)                              0.05       0.86 f
+  XPL/r469/U1_1_15/YC (HAX1)                              0.05       0.91 f
+  XPL/r469/U1_1_16/YC (HAX1)                              0.05       0.96 f
+  XPL/r469/U1_1_17/YC (HAX1)                              0.05       1.01 f
+  XPL/r469/U1_1_18/YC (HAX1)                              0.05       1.06 f
+  XPL/r469/U1_1_19/YC (HAX1)                              0.05       1.11 f
+  XPL/r469/U1_1_20/YC (HAX1)                              0.05       1.16 f
+  XPL/r469/U1_1_21/YC (HAX1)                              0.05       1.21 f
+  XPL/r469/U1_1_22/YC (HAX1)                              0.05       1.26 f
+  XPL/r469/U1_1_23/YC (HAX1)                              0.05       1.32 f
+  XPL/r469/U1_1_24/YC (HAX1)                              0.05       1.37 f
+  XPL/r469/U2/Y (XOR2X1)                                  0.03       1.40 f
+  XPL/r469/SUM[25] (Processing_logic_DW01_inc_1)          0.00       1.40 f
+  XPL/U593/Y (AOI22X1)                                    0.05       1.45 r
+  XPL/U1177/Y (BUFX2)                                     0.04       1.49 r
   XPL/U127/Y (AND2X1)                                     0.03       1.51 r
-  XPL/U1165/Y (INVX1)                                     0.02       1.53 f
+  XPL/U1175/Y (INVX1)                                     0.02       1.53 f
   XPL/CMD_addr_reg[25]/D (DFFPOSX1)                       0.00       1.53 f
   data arrival time                                                  1.53
 
@@ -521,10 +521,10 @@ Wire Load Model Mode: top
   FIFO_CMD/U4162/Y (MUX2X1)                               0.08       1.33 r
   FIFO_CMD/U3779/Y (MUX2X1)                               0.03       1.36 f
   FIFO_CMD/U4163/Y (MUX2X1)                               0.07       1.43 r
-  FIFO_CMD/U3711/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U3709/Y (INVX1)                                0.03       1.45 f
   FIFO_CMD/U2380/Y (AOI22X1)                              0.03       1.48 r
   FIFO_CMD/U14/Y (BUFX2)                                  0.03       1.52 r
-  FIFO_CMD/U3710/Y (INVX1)                                0.01       1.53 f
+  FIFO_CMD/U3708/Y (INVX1)                                0.01       1.53 f
   FIFO_CMD/data_out_reg[3]/D (DFFPOSX1)                   0.00       1.53 f
   data arrival time                                                  1.53
 
@@ -558,10 +558,10 @@ Wire Load Model Mode: top
   FIFO_CMD/U4183/Y (MUX2X1)                               0.08       1.33 r
   FIFO_CMD/U3789/Y (MUX2X1)                               0.03       1.36 f
   FIFO_CMD/U4184/Y (MUX2X1)                               0.07       1.43 r
-  FIFO_CMD/U3713/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U3711/Y (INVX1)                                0.03       1.45 f
   FIFO_CMD/U2379/Y (AOI22X1)                              0.03       1.48 r
   FIFO_CMD/U15/Y (BUFX2)                                  0.03       1.52 r
-  FIFO_CMD/U3712/Y (INVX1)                                0.01       1.53 f
+  FIFO_CMD/U3710/Y (INVX1)                                0.01       1.53 f
   FIFO_CMD/data_out_reg[4]/D (DFFPOSX1)                   0.00       1.53 f
   data arrival time                                                  1.53
 
@@ -595,10 +595,10 @@ Wire Load Model Mode: top
   FIFO_CMD/U4141/Y (MUX2X1)                               0.08       1.33 r
   FIFO_CMD/U3769/Y (MUX2X1)                               0.03       1.36 f
   FIFO_CMD/U4142/Y (MUX2X1)                               0.07       1.43 r
-  FIFO_CMD/U3717/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U3715/Y (INVX1)                                0.03       1.45 f
   FIFO_CMD/U2381/Y (AOI22X1)                              0.03       1.48 r
   FIFO_CMD/U13/Y (BUFX2)                                  0.03       1.52 r
-  FIFO_CMD/U3716/Y (INVX1)                                0.01       1.53 f
+  FIFO_CMD/U3714/Y (INVX1)                                0.01       1.53 f
   FIFO_CMD/data_out_reg[2]/D (DFFPOSX1)                   0.00       1.53 f
   data arrival time                                                  1.53
 
