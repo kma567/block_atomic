@@ -112,7 +112,6 @@ module Processing_logic(
 	
 	reg [25:0] CMD_addr;
 	reg [1:0] CMD_sz;
-	reg [2:0] CMD_op;
 	reg BLOCK_cmd;
 	
 	reg [15:0] ATOMIC_data;
@@ -140,8 +139,8 @@ module Processing_logic(
 		SCW 		= 3'b010,
 		BLR			= 3'b011,
 		BLW			= 3'b100,
-		ATW			= 3'b101,
-		ATR			= 3'b110;
+		ATR			= 3'b101,
+		ATW			= 3'b110;
 		
 	localparam	[3:0]
 		NOP			= 4'b0111,
@@ -331,7 +330,6 @@ always @(posedge clk)
 			begin
 				CMD_addr <= CMD_data_out[30:5];
 				CMD_sz <= CMD_data_out[4:3];
-				CMD_op <= CMD_data_out[2:0];
 				if (!ck)
 				begin					
 					case (CMD_data_out[33:31])
@@ -655,9 +653,9 @@ always @(posedge clk)
 		
 	  end
 		
-always @(CMD_op, RETURN_data, DATA_data_out)
+always @(CMD_data_out, RETURN_data, DATA_data_out)
 begin
-	case (CMD_op)
+	case (CMD_data_out[2:0])
 	
 		3'b000: ATOMIC_data_in = ~RETURN_data;
 		3'b001: ATOMIC_data_in = RETURN_data + DATA_data_out;

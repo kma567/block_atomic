@@ -1,0 +1,34 @@
+ 
+****************************************
+Report : area
+Design : ddr3_controller
+Version: F-2011.09-SP2
+Date   : Mon Nov  7 21:47:12 2016
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'ddr3_controller' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Information: Timing loop detected. (OPT-150)
+	XPL/ring_buffer/U678/A XPL/ring_buffer/U678/Y XPL/ring_buffer/F0_reg/CLK XPL/ring_buffer/F0_reg/Q XPL/ring_buffer/U602/A XPL/ring_buffer/U602/Y XPL/ring_buffer/U400/B XPL/ring_buffer/U400/Y XPL/ring_buffer/DELAY0/A XPL/ring_buffer/DELAY0/Y 
+Warning: Disabling timing arc between pins 'B' and 'Y' on cell 'XPL/ring_buffer/U400'
+         to break a timing loop. (OPT-314)
+Library(s) Used:
+
+    gscl45nm (File: /home/scf-22/ee577/NCSU45PDK/FreePDK45/osu_soc/lib/files/gscl45nm.db)
+
+Number of ports:                          152
+Number of nets:                           448
+Number of cells:                          132
+Number of combinational cells:            118
+Number of sequential cells:                 8
+Number of macros:                           0
+Number of buf/inv:                         56
+Number of references:                      18
+
+Combinational area:       39413.690587
+Noncombinational area:    27396.794798
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:          66810.485385
+Total area:                 undefined
+1

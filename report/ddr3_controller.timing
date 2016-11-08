@@ -1,0 +1,1526 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 20
+        -max_paths 20
+Design : ddr3_controller
+Version: F-2011.09-SP2
+Date   : Mon Nov  7 21:47:13 2016
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3609/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4199/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3799/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4205/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3704/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2378/Y (AOI22X1)                              0.03       1.49 r
+  FIFO_CMD/U16/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3703/Y (INVX1)                                0.01       1.54 f
+  FIFO_CMD/data_out_reg[5]/D (DFFPOSX1)                   0.00       1.54 f
+  data arrival time                                                  1.54
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[5]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.54
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3609/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4220/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3809/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4226/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3702/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2377/Y (AOI22X1)                              0.03       1.49 r
+  FIFO_CMD/U17/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3701/Y (INVX1)                                0.01       1.54 f
+  FIFO_CMD/data_out_reg[6]/D (DFFPOSX1)                   0.00       1.54 f
+  data arrival time                                                  1.54
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[6]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.54
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[19]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3610/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4493/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3939/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4499/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3676/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2364/Y (AOI22X1)                              0.03       1.49 r
+  FIFO_CMD/U30/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3675/Y (INVX1)                                0.01       1.54 f
+  FIFO_CMD/data_out_reg[19]/D (DFFPOSX1)                  0.00       1.54 f
+  data arrival time                                                  1.54
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[19]/CLK (DFFPOSX1)                0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.54
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3609/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4577/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3979/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4583/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3668/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2360/Y (AOI22X1)                              0.03       1.49 r
+  FIFO_CMD/U34/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3667/Y (INVX1)                                0.01       1.54 f
+  FIFO_CMD/data_out_reg[23]/D (DFFPOSX1)                  0.00       1.54 f
+  data arrival time                                                  1.54
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[23]/CLK (DFFPOSX1)                0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.54
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3610/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4157/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3779/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4163/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3711/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2380/Y (AOI22X1)                              0.03       1.49 r
+  FIFO_CMD/U14/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3710/Y (INVX1)                                0.01       1.54 f
+  FIFO_CMD/data_out_reg[3]/D (DFFPOSX1)                   0.00       1.54 f
+  data arrival time                                                  1.54
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[3]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.54
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3609/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4178/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3789/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4184/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3713/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2379/Y (AOI22X1)                              0.03       1.49 r
+  FIFO_CMD/U15/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3712/Y (INVX1)                                0.01       1.54 f
+  FIFO_CMD/data_out_reg[4]/D (DFFPOSX1)                   0.00       1.54 f
+  data arrival time                                                  1.54
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[4]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.54
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3610/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4136/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3769/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4142/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3717/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2381/Y (AOI22X1)                              0.03       1.49 r
+  FIFO_CMD/U13/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3716/Y (INVX1)                                0.01       1.54 f
+  FIFO_CMD/data_out_reg[2]/D (DFFPOSX1)                   0.00       1.54 f
+  data arrival time                                                  1.54
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[2]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.54
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3610/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4115/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3759/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4121/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3723/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2382/Y (AOI22X1)                              0.03       1.49 r
+  FIFO_CMD/U12/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3722/Y (INVX1)                                0.01       1.54 f
+  FIFO_CMD/data_out_reg[1]/D (DFFPOSX1)                   0.00       1.54 f
+  data arrival time                                                  1.54
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[1]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.54
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: XPL/CMD_addr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: XPL/CMD_addr_reg[25]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  XPL/CMD_addr_reg[0]/CLK (DFFPOSX1)                      0.00 #     0.00 r
+  XPL/CMD_addr_reg[0]/Q (DFFPOSX1)                        0.13       0.13 f
+  XPL/r473/A[0] (Processing_logic_DW01_inc_1)             0.00       0.13 f
+  XPL/r473/U1_1_1/YC (HAX1)                               0.06       0.19 f
+  XPL/r473/U1_1_2/YC (HAX1)                               0.05       0.24 f
+  XPL/r473/U1_1_3/YC (HAX1)                               0.05       0.29 f
+  XPL/r473/U1_1_4/YC (HAX1)                               0.05       0.34 f
+  XPL/r473/U1_1_5/YC (HAX1)                               0.05       0.39 f
+  XPL/r473/U1_1_6/YC (HAX1)                               0.05       0.45 f
+  XPL/r473/U1_1_7/YC (HAX1)                               0.05       0.50 f
+  XPL/r473/U1_1_8/YC (HAX1)                               0.05       0.55 f
+  XPL/r473/U1_1_9/YC (HAX1)                               0.05       0.60 f
+  XPL/r473/U1_1_10/YC (HAX1)                              0.05       0.65 f
+  XPL/r473/U1_1_11/YC (HAX1)                              0.05       0.70 f
+  XPL/r473/U1_1_12/YC (HAX1)                              0.05       0.75 f
+  XPL/r473/U1_1_13/YC (HAX1)                              0.05       0.80 f
+  XPL/r473/U1_1_14/YC (HAX1)                              0.05       0.86 f
+  XPL/r473/U1_1_15/YC (HAX1)                              0.05       0.91 f
+  XPL/r473/U1_1_16/YC (HAX1)                              0.05       0.96 f
+  XPL/r473/U1_1_17/YC (HAX1)                              0.05       1.01 f
+  XPL/r473/U1_1_18/YC (HAX1)                              0.05       1.06 f
+  XPL/r473/U1_1_19/YC (HAX1)                              0.05       1.11 f
+  XPL/r473/U1_1_20/YC (HAX1)                              0.05       1.16 f
+  XPL/r473/U1_1_21/YC (HAX1)                              0.05       1.21 f
+  XPL/r473/U1_1_22/YC (HAX1)                              0.05       1.26 f
+  XPL/r473/U1_1_23/YC (HAX1)                              0.05       1.32 f
+  XPL/r473/U1_1_24/YC (HAX1)                              0.05       1.37 f
+  XPL/r473/U2/Y (XOR2X1)                                  0.03       1.40 f
+  XPL/r473/SUM[25] (Processing_logic_DW01_inc_1)          0.00       1.40 f
+  XPL/U594/Y (AOI22X1)                                    0.05       1.45 r
+  XPL/U1167/Y (BUFX2)                                     0.04       1.49 r
+  XPL/U127/Y (AND2X1)                                     0.03       1.51 r
+  XPL/U1165/Y (INVX1)                                     0.02       1.53 f
+  XPL/CMD_addr_reg[25]/D (DFFPOSX1)                       0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/CMD_addr_reg[25]/CLK (DFFPOSX1)                     0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: XPL/CMD_addr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: XPL/CMD_addr_reg[25]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  XPL/CMD_addr_reg[1]/CLK (DFFPOSX1)                      0.00 #     0.00 r
+  XPL/CMD_addr_reg[1]/Q (DFFPOSX1)                        0.13       0.13 f
+  XPL/r473/A[1] (Processing_logic_DW01_inc_1)             0.00       0.13 f
+  XPL/r473/U1_1_1/YC (HAX1)                               0.06       0.19 f
+  XPL/r473/U1_1_2/YC (HAX1)                               0.05       0.24 f
+  XPL/r473/U1_1_3/YC (HAX1)                               0.05       0.29 f
+  XPL/r473/U1_1_4/YC (HAX1)                               0.05       0.34 f
+  XPL/r473/U1_1_5/YC (HAX1)                               0.05       0.39 f
+  XPL/r473/U1_1_6/YC (HAX1)                               0.05       0.45 f
+  XPL/r473/U1_1_7/YC (HAX1)                               0.05       0.50 f
+  XPL/r473/U1_1_8/YC (HAX1)                               0.05       0.55 f
+  XPL/r473/U1_1_9/YC (HAX1)                               0.05       0.60 f
+  XPL/r473/U1_1_10/YC (HAX1)                              0.05       0.65 f
+  XPL/r473/U1_1_11/YC (HAX1)                              0.05       0.70 f
+  XPL/r473/U1_1_12/YC (HAX1)                              0.05       0.75 f
+  XPL/r473/U1_1_13/YC (HAX1)                              0.05       0.80 f
+  XPL/r473/U1_1_14/YC (HAX1)                              0.05       0.86 f
+  XPL/r473/U1_1_15/YC (HAX1)                              0.05       0.91 f
+  XPL/r473/U1_1_16/YC (HAX1)                              0.05       0.96 f
+  XPL/r473/U1_1_17/YC (HAX1)                              0.05       1.01 f
+  XPL/r473/U1_1_18/YC (HAX1)                              0.05       1.06 f
+  XPL/r473/U1_1_19/YC (HAX1)                              0.05       1.11 f
+  XPL/r473/U1_1_20/YC (HAX1)                              0.05       1.16 f
+  XPL/r473/U1_1_21/YC (HAX1)                              0.05       1.21 f
+  XPL/r473/U1_1_22/YC (HAX1)                              0.05       1.26 f
+  XPL/r473/U1_1_23/YC (HAX1)                              0.05       1.32 f
+  XPL/r473/U1_1_24/YC (HAX1)                              0.05       1.37 f
+  XPL/r473/U2/Y (XOR2X1)                                  0.03       1.40 f
+  XPL/r473/SUM[25] (Processing_logic_DW01_inc_1)          0.00       1.40 f
+  XPL/U594/Y (AOI22X1)                                    0.05       1.45 r
+  XPL/U1167/Y (BUFX2)                                     0.04       1.49 r
+  XPL/U127/Y (AND2X1)                                     0.03       1.51 r
+  XPL/U1165/Y (INVX1)                                     0.02       1.53 f
+  XPL/CMD_addr_reg[25]/D (DFFPOSX1)                       0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/CMD_addr_reg[25]/CLK (DFFPOSX1)                     0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3609/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4204/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3799/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4205/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3704/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2378/Y (AOI22X1)                              0.03       1.48 r
+  FIFO_CMD/U16/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3703/Y (INVX1)                                0.01       1.53 f
+  FIFO_CMD/data_out_reg[5]/D (DFFPOSX1)                   0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[5]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3609/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4225/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3809/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4226/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3702/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2377/Y (AOI22X1)                              0.03       1.48 r
+  FIFO_CMD/U17/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3701/Y (INVX1)                                0.01       1.53 f
+  FIFO_CMD/data_out_reg[6]/D (DFFPOSX1)                   0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[6]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3610/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4162/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3779/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4163/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3711/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2380/Y (AOI22X1)                              0.03       1.48 r
+  FIFO_CMD/U14/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3710/Y (INVX1)                                0.01       1.53 f
+  FIFO_CMD/data_out_reg[3]/D (DFFPOSX1)                   0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[3]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3609/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4183/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3789/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4184/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3713/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2379/Y (AOI22X1)                              0.03       1.48 r
+  FIFO_CMD/U15/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3712/Y (INVX1)                                0.01       1.53 f
+  FIFO_CMD/data_out_reg[4]/D (DFFPOSX1)                   0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[4]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3610/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4141/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3769/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4142/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3717/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2381/Y (AOI22X1)                              0.03       1.48 r
+  FIFO_CMD/U13/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3716/Y (INVX1)                                0.01       1.53 f
+  FIFO_CMD/data_out_reg[2]/D (DFFPOSX1)                   0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[2]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_CMD/rd_ptr_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_CMD/data_out_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_CMD/rd_ptr_reg[2]/CLK (DFFPOSX1)                   0.00 #     0.00 r
+  FIFO_CMD/rd_ptr_reg[2]/Q (DFFPOSX1)                     0.75       0.75 r
+  FIFO_CMD/U3732/Y (INVX1)                                0.20       0.95 f
+  FIFO_CMD/U3610/Y (INVX1)                                0.30       1.25 r
+  FIFO_CMD/U4120/Y (MUX2X1)                               0.08       1.33 r
+  FIFO_CMD/U3759/Y (MUX2X1)                               0.03       1.36 f
+  FIFO_CMD/U4121/Y (MUX2X1)                               0.07       1.43 r
+  FIFO_CMD/U3723/Y (INVX1)                                0.03       1.45 f
+  FIFO_CMD/U2382/Y (AOI22X1)                              0.03       1.48 r
+  FIFO_CMD/U12/Y (BUFX2)                                  0.03       1.52 r
+  FIFO_CMD/U3722/Y (INVX1)                                0.01       1.53 f
+  FIFO_CMD/data_out_reg[1]/D (DFFPOSX1)                   0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_CMD/data_out_reg[1]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_IN/rd_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_IN/data_out_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_IN/rd_ptr_reg[1]/CLK (DFFPOSX1)                    0.00 #     0.00 r
+  FIFO_IN/rd_ptr_reg[1]/Q (DFFPOSX1)                      0.70       0.70 r
+  FIFO_IN/U1824/Y (INVX1)                                 0.21       0.91 f
+  FIFO_IN/U1696/Y (INVX1)                                 0.28       1.20 r
+  FIFO_IN/U1849/Y (MUX2X1)                                0.08       1.28 f
+  FIFO_IN/U2028/Y (MUX2X1)                                0.05       1.33 r
+  FIFO_IN/U1852/Y (MUX2X1)                                0.04       1.37 f
+  FIFO_IN/U2034/Y (MUX2X1)                                0.05       1.42 r
+  FIFO_IN/U1811/Y (INVX1)                                 0.02       1.45 f
+  FIFO_IN/U1166/Y (AOI22X1)                               0.03       1.48 r
+  FIFO_IN/U12/Y (BUFX2)                                   0.03       1.52 r
+  FIFO_IN/U1810/Y (INVX1)                                 0.01       1.53 f
+  FIFO_IN/data_out_reg[1]/D (DFFPOSX1)                    0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_IN/data_out_reg[1]/CLK (DFFPOSX1)                  0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_IN/rd_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_IN/data_out_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_IN/rd_ptr_reg[1]/CLK (DFFPOSX1)                    0.00 #     0.00 r
+  FIFO_IN/rd_ptr_reg[1]/Q (DFFPOSX1)                      0.70       0.70 r
+  FIFO_IN/U1824/Y (INVX1)                                 0.21       0.91 f
+  FIFO_IN/U1695/Y (INVX1)                                 0.28       1.20 r
+  FIFO_IN/U1859/Y (MUX2X1)                                0.08       1.28 f
+  FIFO_IN/U2049/Y (MUX2X1)                                0.05       1.33 r
+  FIFO_IN/U1862/Y (MUX2X1)                                0.04       1.37 f
+  FIFO_IN/U2055/Y (MUX2X1)                                0.05       1.42 r
+  FIFO_IN/U1809/Y (INVX1)                                 0.02       1.45 f
+  FIFO_IN/U1165/Y (AOI22X1)                               0.03       1.48 r
+  FIFO_IN/U13/Y (BUFX2)                                   0.03       1.52 r
+  FIFO_IN/U1808/Y (INVX1)                                 0.01       1.53 f
+  FIFO_IN/data_out_reg[2]/D (DFFPOSX1)                    0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_IN/data_out_reg[2]/CLK (DFFPOSX1)                  0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_IN/rd_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_IN/data_out_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_IN/rd_ptr_reg[1]/CLK (DFFPOSX1)                    0.00 #     0.00 r
+  FIFO_IN/rd_ptr_reg[1]/Q (DFFPOSX1)                      0.70       0.70 r
+  FIFO_IN/U1824/Y (INVX1)                                 0.21       0.91 f
+  FIFO_IN/U1695/Y (INVX1)                                 0.28       1.20 r
+  FIFO_IN/U1869/Y (MUX2X1)                                0.08       1.28 f
+  FIFO_IN/U2070/Y (MUX2X1)                                0.05       1.33 r
+  FIFO_IN/U1872/Y (MUX2X1)                                0.04       1.37 f
+  FIFO_IN/U2076/Y (MUX2X1)                                0.05       1.42 r
+  FIFO_IN/U1807/Y (INVX1)                                 0.02       1.45 f
+  FIFO_IN/U1164/Y (AOI22X1)                               0.03       1.48 r
+  FIFO_IN/U14/Y (BUFX2)                                   0.03       1.52 r
+  FIFO_IN/U1806/Y (INVX1)                                 0.01       1.53 f
+  FIFO_IN/data_out_reg[3]/D (DFFPOSX1)                    0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_IN/data_out_reg[3]/CLK (DFFPOSX1)                  0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: FIFO_IN/rd_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: FIFO_IN/data_out_reg[14]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  FIFO_IN/rd_ptr_reg[1]/CLK (DFFPOSX1)                    0.00 #     0.00 r
+  FIFO_IN/rd_ptr_reg[1]/Q (DFFPOSX1)                      0.70       0.70 r
+  FIFO_IN/U1824/Y (INVX1)                                 0.21       0.91 f
+  FIFO_IN/U1695/Y (INVX1)                                 0.28       1.20 r
+  FIFO_IN/U1979/Y (MUX2X1)                                0.08       1.28 f
+  FIFO_IN/U2301/Y (MUX2X1)                                0.05       1.33 r
+  FIFO_IN/U1982/Y (MUX2X1)                                0.04       1.37 f
+  FIFO_IN/U2307/Y (MUX2X1)                                0.05       1.42 r
+  FIFO_IN/U1785/Y (INVX1)                                 0.02       1.45 f
+  FIFO_IN/U1153/Y (AOI22X1)                               0.03       1.48 r
+  FIFO_IN/U25/Y (BUFX2)                                   0.03       1.52 r
+  FIFO_IN/U1784/Y (INVX1)                                 0.01       1.53 f
+  FIFO_IN/data_out_reg[14]/D (DFFPOSX1)                   0.00       1.53 f
+  data arrival time                                                  1.53
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  FIFO_IN/data_out_reg[14]/CLK (DFFPOSX1)                 0.00       1.60 r
+  library setup time                                     -0.06       1.54
+  data required time                                                 1.54
+  --------------------------------------------------------------------------
+  data required time                                                 1.54
+  data arrival time                                                 -1.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[0]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U314/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U319/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U232/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[0]/D (DFFPOSX1)                  0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[0]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[1]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U427/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U428/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U235/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[1]/D (DFFPOSX1)                  0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[1]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[2]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U362/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U367/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U238/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[2]/D (DFFPOSX1)                  0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[2]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[3]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U237/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U239/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U241/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[3]/D (DFFPOSX1)                  0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[3]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[4]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U555/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U556/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U244/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[4]/D (DFFPOSX1)                  0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[4]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[5]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U451/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U452/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U247/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[5]/D (DFFPOSX1)                  0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[5]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[6]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U187/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U189/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U250/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[6]/D (DFFPOSX1)                  0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[6]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[7]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U582/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U583/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U253/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[7]/D (DFFPOSX1)                  0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[7]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[8]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U211/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U213/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U256/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[8]/D (DFFPOSX1)                  0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[8]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[9]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U135/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U137/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U259/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[9]/D (DFFPOSX1)                  0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[9]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[10]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U131/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U133/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U262/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[10]/D (DFFPOSX1)                 0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[10]/CLK (DFFPOSX1)               0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[11]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U127/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U129/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U265/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[11]/D (DFFPOSX1)                 0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[11]/CLK (DFFPOSX1)               0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[12]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U477/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U478/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U268/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[12]/D (DFFPOSX1)                 0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[12]/CLK (DFFPOSX1)               0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[13]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U409/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U410/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U271/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[13]/D (DFFPOSX1)                 0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[13]/CLK (DFFPOSX1)               0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[14]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U255/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U257/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U274/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[14]/D (DFFPOSX1)                 0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[14]/CLK (DFFPOSX1)               0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[1]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[15]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[1]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[1]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U629/Y (BUFX2)                          0.04       1.76 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.04       1.80 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.34 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.49 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.73 f
+  XPL/ring_buffer/U308/Y (AND2X1)                         0.07       2.80 f
+  XPL/ring_buffer/U313/Y (INVX1)                          0.00       2.79 r
+  XPL/ring_buffer/U277/Y (OAI21X1)                        0.01       2.80 f
+  XPL/ring_buffer/r0_reg[15]/D (DFFPOSX1)                 0.00       2.80 f
+  data arrival time                                                  2.80
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[15]/CLK (DFFPOSX1)               0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.33
+
+
+  Startpoint: XPL/ring_buffer/count_reg[0]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[0]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[0]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[0]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U571/Y (BUFX2)                          0.03       1.75 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.03       1.78 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.32 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.47 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.71 f
+  XPL/ring_buffer/U314/Y (AND2X1)                         0.07       2.78 f
+  XPL/ring_buffer/U319/Y (INVX1)                          0.00       2.77 r
+  XPL/ring_buffer/U232/Y (OAI21X1)                        0.01       2.78 f
+  XPL/ring_buffer/r0_reg[0]/D (DFFPOSX1)                  0.00       2.78 f
+  data arrival time                                                  2.78
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[0]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.78
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.35
+
+
+  Startpoint: XPL/ring_buffer/count_reg[0]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[1]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[0]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[0]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U571/Y (BUFX2)                          0.03       1.75 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.03       1.78 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.32 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.47 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.71 f
+  XPL/ring_buffer/U427/Y (AND2X1)                         0.07       2.78 f
+  XPL/ring_buffer/U428/Y (INVX1)                          0.00       2.77 r
+  XPL/ring_buffer/U235/Y (OAI21X1)                        0.01       2.78 f
+  XPL/ring_buffer/r0_reg[1]/D (DFFPOSX1)                  0.00       2.78 f
+  data arrival time                                                  2.78
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[1]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.78
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.35
+
+
+  Startpoint: XPL/ring_buffer/count_reg[0]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[2]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[0]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[0]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U571/Y (BUFX2)                          0.03       1.75 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.03       1.78 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.32 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.47 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.71 f
+  XPL/ring_buffer/U362/Y (AND2X1)                         0.07       2.78 f
+  XPL/ring_buffer/U367/Y (INVX1)                          0.00       2.77 r
+  XPL/ring_buffer/U238/Y (OAI21X1)                        0.01       2.78 f
+  XPL/ring_buffer/r0_reg[2]/D (DFFPOSX1)                  0.00       2.78 f
+  data arrival time                                                  2.78
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[2]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.78
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.35
+
+
+  Startpoint: XPL/ring_buffer/count_reg[0]
+              (rising edge-triggered flip-flop clocked by strobe')
+  Endpoint: XPL/ring_buffer/r0_reg[3]
+            (rising edge-triggered flip-flop clocked by strobe)
+  Path Group: strobe
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock strobe' (rise edge)                               1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  XPL/ring_buffer/count_reg[0]/CLK (DFFSR)                0.00       1.60 r
+  XPL/ring_buffer/count_reg[0]/Q (DFFSR)                  0.11       1.71 f
+  XPL/ring_buffer/U571/Y (BUFX2)                          0.03       1.75 f
+  XPL/ring_buffer/U57/Y (AND2X1)                          0.03       1.78 f
+  XPL/ring_buffer/U642/Y (INVX1)                          0.54       2.32 r
+  XPL/ring_buffer/U279/Y (NAND3X1)                        0.15       2.47 f
+  XPL/ring_buffer/U51/Y (BUFX2)                           0.23       2.71 f
+  XPL/ring_buffer/U237/Y (AND2X1)                         0.07       2.78 f
+  XPL/ring_buffer/U239/Y (INVX1)                          0.00       2.77 r
+  XPL/ring_buffer/U241/Y (OAI21X1)                        0.01       2.78 f
+  XPL/ring_buffer/r0_reg[3]/D (DFFPOSX1)                  0.00       2.78 f
+  data arrival time                                                  2.78
+
+  clock strobe (rise edge)                                3.20       3.20
+  clock network delay (ideal)                             0.00       3.20
+  XPL/ring_buffer/r0_reg[3]/CLK (DFFPOSX1)                0.00       3.20 r
+  library setup time                                     -0.07       3.13
+  data required time                                                 3.13
+  --------------------------------------------------------------------------
+  data required time                                                 3.13
+  data arrival time                                                 -2.78
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.35
+
+
+1

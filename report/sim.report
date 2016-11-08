@@ -1,0 +1,58 @@
+ncelab -ACCESS +rwc -NCFATAL INVSUP -NCFATAL CUNOTB -ERRORMAX 5 -UPDATE -MESSAGES -loadpli /usr/local/cadence/VIPCAT113/tools.lnx86/denali/verilog/libdenpli.so:den_PLIPtr -loadpli1 /home/scf-31/kma567/EE577B/Project/DDR3/fileio.so:bstrap -TIMESCALE '1ps/1ps' -LIBVERBOSE work.tb
+Updating: module work.tb:module (VST)
+file: ./tb/ddr3_controller_tb.v
+	module work.tb:module
+		errors: 0, warnings: 0
+ncvlog: Memory Usage - 10.5M program + 11.3M data = 21.8M total
+ncvlog: CPU Usage - 0.0s system + 0.0s user = 0.0s total (0.0s, 20.7% cpu)
+ncelab: 08.20-s029: (c) Copyright 1995-2011 Cadence Design Systems, Inc.
+SYSTEM ERROR:   ACC       LOADFL
+         Failed to load dynamic library /home/scf-31/kma567/EE577B/Project/DDR3/fileio.so
+  /home/scf-31/kma567/EE577B/Project/DDR3/fileio.so: ELF file data encoding not little-endian
+	Elaborating the design hierarchy:
+Resolving design unit 'ddr3_controller' at 'tb.DUT'.
+		Caching library 'work' ....... Done
+	library: 'work' views: 'module' -> found
+Resolved design unit 'ddr3_controller' at 'tb.DUT' to 'work.ddr3_controller:module'.
+ddr3_controller DUT(
+                  |
+ncelab: *W,CUVWSI (./tb/ddr3_controller_tb.v,28|18): 1 input port was not connected:
+ncelab: (./design/ddr3_controller.v,10): initddr
+
+Resolving design unit 'FIFO' at 'tb.DUT@ddr3_controller<module>.FIFO_IN'.
+	library: 'work' views: 'module' -> found
+Resolved design unit 'FIFO' at 'tb.DUT@ddr3_controller<module>.FIFO_IN' to 'work.FIFO:module'.
+Resolved design unit 'FIFO' at 'tb.DUT@ddr3_controller<module>.FIFO_CMD' to 'work.FIFO:module'.
+Resolved design unit 'FIFO' at 'tb.DUT@ddr3_controller<module>.FIFO_RETURN' to 'work.FIFO:module'.
+Resolving design unit 'ddr3_init_engine' at 'tb.DUT@ddr3_controller<module>.XINIT'.
+	library: 'work' views: 'module' -> found
+Resolved design unit 'ddr3_init_engine' at 'tb.DUT@ddr3_controller<module>.XINIT' to 'work.ddr3_init_engine:module'.
+Resolving design unit 'Processing_logic' at 'tb.DUT@ddr3_controller<module>.XPL'.
+	library: 'work' views: 'module' -> found
+Resolved design unit 'Processing_logic' at 'tb.DUT@ddr3_controller<module>.XPL' to 'work.Processing_logic:module'.
+Resolving design unit 'ddr2_ring_buffer8' at 'tb.DUT@ddr3_controller<module>.XPL@Processing_logic<module>.ring_buffer'.
+	library: 'work' views: 'module' -> found
+Resolved design unit 'ddr2_ring_buffer8' at 'tb.DUT@ddr3_controller<module>.XPL@Processing_logic<module>.ring_buffer' to 'work.ddr2_ring_buffer8:module'.
+Resolving design unit 'CLKBUF2' at 'tb.DUT@ddr3_controller<module>.XPL@Processing_logic<module>.ring_buffer@ddr2_ring_buffer8<module>.DELAY0'.
+	library: 'work' views: 'module' 'udp' -> not found
+    CLKBUF2 DELAY0 (.Y(dStrobe0), .A(strobe  ));
+                 |
+ncelab: *E,CUVMUR (./design/ddr3_ring_buffer8.v,32|17): instance 'tb.DUT@ddr3_controller<module>.XPL@Processing_logic<module>.ring_buffer@ddr2_ring_buffer8<module>.DELAY0' of design unit 'CLKBUF2' is unresolved in 'work.ddr2_ring_buffer8:module'.
+Resolving design unit 'SSTL18DDR3INTERFACE' at 'tb.DUT@ddr3_controller<module>.XSSTL'.
+	library: 'work' views: 'module' -> found
+Resolved design unit 'SSTL18DDR3INTERFACE' at 'tb.DUT@ddr3_controller<module>.XSSTL' to 'work.SSTL18DDR3INTERFACE:module'.
+Resolving design unit 'SSTL18DDR3DIFF' at 'tb.DUT@ddr3_controller<module>.XSSTL@SSTL18DDR3INTERFACE<module>.ck_sstl'.
+	library: 'work' views: 'module' -> found
+Resolved design unit 'SSTL18DDR3DIFF' at 'tb.DUT@ddr3_controller<module>.XSSTL@SSTL18DDR3INTERFACE<module>.ck_sstl' to 'work.SSTL18DDR3DIFF:module'.
+Resolving design unit 'SSTL18DDR3' at 'tb.DUT@ddr3_controller<module>.XSSTL@SSTL18DDR3INTERFACE<module>.cke_sstl'.
+	library: 'work' views: 'module' -> found
+Resolved design unit 'SSTL18DDR3' at 'tb.DUT@ddr3_controller<module>.XSSTL@SSTL18DDR3INTERFACE<module>.cke_sstl' to 'work.SSTL18DDR3:module'.
+Resolved design unit 'SSTL18DDR3' at 'tb.DUT@ddr3_controller<module>.XSSTL@SSTL18DDR3INTERFACE<module>.casbar_sstl' to 'work.SSTL18DDR3:module'.
+Resolved design unit 'SSTL18DDR3' at 'tb.DUT@ddr3_controller<module>.XSSTL@SSTL18DDR3INTERFACE<module>.rasbar_sstl' to 'work.SSTL18DDR3:module'.
+Resolved design unit 'SSTL18DDR3' at 'tb.DUT@ddr3_controller<module>.XSSTL@SSTL18DDR3INTERFACE<module>.csbar_sstl' to 'work.SSTL18DDR3:module'.
+Resolved design unit 'SSTL18DDR3' at 'tb.DUT@ddr3_controller<module>.XSSTL@SSTL18DDR3INTERFACE<module>.webar_sstl' to 'work.SSTL18DDR3:module'.
+Resolved design unit 'SSTL18DDR3' at 'tb.DUT@ddr3_controller<module>.XSSTL@SSTL18DDR3INTERFACE<module>.odt_sstl' to 'work.SSTL18DDR3:module'.
+Resolved design unit 'SSTL18DDR3' at 'tb.DUT@ddr3_controller<module>.XSSTL@SSTL18DDR3INTERFACE<module>.resetbar_sstl' to 'work.SSTL18DDR3:module'.
+Resolving design unit 'mt41j64m16_187' at 'tb.XDDR0'.
+	library: 'work' views: 'module' -> found
+Resolved design unit 'mt41j64m16_187' at 'tb.XDDR0' to 'work.mt41j64m16_187:module'.
